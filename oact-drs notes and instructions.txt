@@ -1,0 +1,32 @@
+
+
+Apache - > php.ini - > tanggalin ang semicolon sa extension = intl
+
+== Para sa pag get nung needed files sa vendor folder ==
+-Install Composer:  https://getcomposer.org/
+-Go to cmd
+-Change Directory sa path kung nasaan yung ODRS (e.g.: C:\xampp\htdocs\odrs)
+-enter "Composer install"
+
+== Para sa pag run ... pwede rin naman sa xampp na lang ==
+-Go to cmd
+-Change Directory sa path kung nasaan yung ODRS (e.g.: C:\xampp\htdocs\odrs)
+-enter "php spark serve"
+
+== other Notes==
+Env duplicate tas lagyan mo ng dot
+
+After mag debug, palitan yung development ng production
+
+Magkaiba design ng admin sa student site
+
+Student side random generated ung pass
+
+== Account ==
+Admin site
+-Pauline
+-Adminpassword
+
+SuperAdmin site
+-Jerome
+-Adminpassword
