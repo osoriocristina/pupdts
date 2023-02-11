@@ -216,14 +216,18 @@
                                      <input type="checkbox" value="8" name="nc_non_enrollmentID" <?php if(!empty($res['nc_non_enrollmentID'])){echo 'checked';} ?>>Notarized Cert of Non-enrollment<br>
                                       <input type="checkbox" value="9" name="coc_hs_shsID" <?php if(!empty($res['coc_hs_shsID'])){echo 'checked';} ?>>COC (HS/SHS)<br>
                                       <input type="checkbox" value="10" name="ac_pept_alsID" <?php if(!empty($res['ac_pept_alsID'])){echo 'checked';} ?>>Authenticated Copy PEPT/ALS<br>
-                                     
+                                      <hr>
+                                    <label>Graduation Requirements:</label><br>
+                                      <input type="checkbox" value="13" name="app_grad" <?php if(!empty($res['app_grad'])){echo 'checked';} ?>>Application for Graduation<br>
+                                      <input type="checkbox" value="14" name="or_app_grad" <?php if(!empty($res['or_app_grad'])){echo 'checked';} ?>>O.R. of Application of Graduation<br>
+                                      <input type="checkbox" value="15" name="latest_regi" <?php if(!empty($res['latest_regi'])){echo 'checked';} ?>>Latest Registration Card<br>
                                   <br>
                                   <br>
                                   <select class="form-select" name="admission_status" required>
                                     <option <?php if (empty($res['admission_status'])){echo 'selected';}?>>Select Status</option>
-                                    <option value="complete" <?php if ($res['admission_status'] == 'complete'){echo 'selected';}?>>Complete</option>
-                                    <option value="incomplete" <?php if ($res['admission_status'] == 'incomplete'){echo 'selected';}?>>Incomplete</option>
-                                    <option value="rechecking" <?php if ($res['admission_status'] == 'rechecking'){echo 'selected';}?>>Rechecking</option>
+                                    <option value="complete" <?php if (isset($res['admission_status']) == 'complete'){echo 'selected';}?>>Complete</option>
+                                    <option value="incomplete" <?php if (isset($res['admission_status']) == 'incomplete'){echo 'selected';}?>>Incomplete</option>
+                                    <option value="rechecking" <?php if (isset($res['admission_status']) == 'rechecking'){echo 'selected';}?>>Rechecking</option>
                                   </select> 
                                   <br>
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

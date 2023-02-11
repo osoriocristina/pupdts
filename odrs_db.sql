@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2023 at 03:15 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Feb 11, 2023 at 04:00 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `academic_status` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `academic_status`
@@ -58,7 +58,7 @@ CREATE TABLE `admins` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admins`
@@ -71,9 +71,11 @@ INSERT INTO `admins` (`id`, `firstname`, `lastname`, `middlename`, `contact`, `u
 (13, 'nerissa', 'maglente', '', '09345435434', 124, '2021-06-24 15:12:22', '2021-07-29 12:29:07', NULL),
 (14, 'sample', 'sample', 'sample', '091234567789', 199, '2021-07-29 08:07:51', '2021-07-29 08:07:51', NULL),
 (15, 'ley', 'line', 'leyline', '09159632301', 207, '2022-11-17 13:42:19', '2022-11-17 13:42:19', NULL),
-(16, 'Liway', 'mabangis', 'maangas', '09159632301', 211, '2022-11-20 00:16:34', '2022-11-20 00:16:34', NULL),
+(16, 'Liway', 'mabangis', 'maangas', '09159632301', 211, '2022-11-20 00:16:34', '2023-02-11 21:05:00', NULL),
 (17, 'Harvz', 'IT', 'Tech', '09359452475', 214, '2022-12-13 12:01:37', '2022-12-13 13:00:32', '2022-12-13 13:00:32'),
-(18, 'HARVZ', 'IT', 'TEch', '093595151', 215, '2022-12-13 13:23:30', '2022-12-13 13:23:30', NULL);
+(18, 'HARVZ', 'IT', 'TEch', '093595151', 215, '2022-12-13 13:23:30', '2022-12-13 13:23:30', NULL),
+(19, 'edmon', 'delacruz', 'madronio', '09635243546', 219, '2023-02-11 21:06:59', '2023-02-11 21:06:59', NULL),
+(20, 'dfdfdf', 'dfdfdf', 'dfdfdf', '09878789876', 220, '2023-02-11 21:11:02', '2023-02-11 21:11:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,7 @@ CREATE TABLE `checklists` (
   `checklistID` int(11) NOT NULL,
   `checklistName` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `checklists`
@@ -120,7 +122,7 @@ CREATE TABLE `courses` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `courses`
@@ -151,7 +153,7 @@ CREATE TABLE `course_types` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `course_types`
@@ -179,7 +181,7 @@ CREATE TABLE `documents` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `documents`
@@ -212,7 +214,7 @@ CREATE TABLE `document_notes` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `document_notes`
@@ -276,7 +278,7 @@ CREATE TABLE `document_requirements` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -295,7 +297,7 @@ CREATE TABLE `form_requests` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `form_requests`
@@ -320,7 +322,7 @@ CREATE TABLE `modules` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `modules`
@@ -350,7 +352,7 @@ CREATE TABLE `notes` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notes`
@@ -378,7 +380,7 @@ CREATE TABLE `offices` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offices`
@@ -407,7 +409,7 @@ CREATE TABLE `permissions` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `permissions`
@@ -485,7 +487,7 @@ CREATE TABLE `permission_types` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `permission_types`
@@ -515,7 +517,15 @@ CREATE TABLE `ref_for_remarks` (
   `submit_original` varchar(255) DEFAULT NULL,
   `other_remarks` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ref_for_remarks`
+--
+
+INSERT INTO `ref_for_remarks` (`id`, `user_id`, `no_dry_seal`, `sc_true_copy`, `sc_pup_remarks`, `s_one_photocopy`, `submit_original`, `other_remarks`, `created_at`) VALUES
+(3, 221, 'No Dry Seal', NULL, NULL, NULL, NULL, 'dsfdf', '2023-02-11 14:43:01'),
+(4, 222, 'No Dry Seal', NULL, 'Sealed Copy with \"For PUP Taguig\" remarks', NULL, NULL, NULL, '2023-02-11 14:53:15');
 
 -- --------------------------------------------------------
 
@@ -529,7 +539,7 @@ CREATE TABLE `ref_for_retrieved` (
   `requirementsID` int(11) NOT NULL,
   `reasons` text NOT NULL,
   `retrieved_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ref_for_retrieved`
@@ -564,7 +574,7 @@ CREATE TABLE `requests` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `requests`
@@ -616,7 +626,7 @@ CREATE TABLE `request_approvals` (
   `deleted_at` datetime DEFAULT NULL,
   `hold_at` datetime DEFAULT NULL,
   `approved_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -638,7 +648,7 @@ CREATE TABLE `request_details` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `request_details`
@@ -714,7 +724,7 @@ CREATE TABLE `roles` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `roles`
@@ -740,7 +750,7 @@ CREATE TABLE `role_permissions` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `role_permissions`
@@ -827,7 +837,7 @@ CREATE TABLE `students` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
@@ -835,7 +845,9 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`id`, `student_number`, `firstname`, `lastname`, `middlename`, `suffix`, `gender`, `contact`, `birthdate`, `level`, `status`, `year_graduated`, `course_id`, `user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (142, '2017-00234-TG-0', 'wqeqwew', 'qweqeqwe', 'ewwqeqweq', NULL, NULL, NULL, '2001-02-28', NULL, NULL, NULL, 2, 213, '2022-11-24 13:26:35', '2022-11-24 13:26:35', NULL),
-(145, '2019-00425-TG-0', 'Harvey', 'Buena', 'Almerino', NULL, NULL, NULL, '1999-02-04', NULL, NULL, 2019, 2, 218, '2022-12-15 15:08:12', '2022-12-15 15:08:12', NULL);
+(145, '2019-00425-TG-0', 'Harvey', 'Buena', 'Almerino', NULL, NULL, NULL, '1999-02-04', NULL, NULL, 2019, 2, 218, '2022-12-15 15:08:12', '2022-12-15 15:08:12', NULL),
+(146, 'dfsdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 221, '2023-02-11 22:32:13', '2023-02-11 22:32:13', NULL),
+(147, 'cute-ako', 'cute ako', 'cute ako', 'cute ako', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 222, '2023-02-11 22:46:38', '2023-02-11 22:46:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -847,35 +859,41 @@ CREATE TABLE `student_admission` (
   `stud_admissionID` bigint(20) NOT NULL,
   `studID` text NOT NULL,
   `sar_pupcct_resultID` int(11) NOT NULL,
-  `sar_pupcet_result_status` varchar(255) NOT NULL,
+  `sar_pupcet_result_status` varchar(255) DEFAULT NULL,
   `f137ID` int(11) NOT NULL,
-  `f137_status` varchar(255) NOT NULL,
+  `f137_status` varchar(255) DEFAULT NULL,
   `f138ID` int(11) NOT NULL,
-  `g10_status` varchar(255) NOT NULL,
-  `g11_status` varchar(255) NOT NULL,
-  `g12_status` varchar(255) NOT NULL,
+  `g10_status` varchar(255) DEFAULT NULL,
+  `g11_status` varchar(255) DEFAULT NULL,
+  `g12_status` varchar(255) DEFAULT NULL,
   `cert_dry_sealID` int(11) NOT NULL,
+  `cert_dry_sealID_twelve` int(20) NOT NULL,
+  `app_grad` int(20) NOT NULL,
+  `or_app_grad` int(20) NOT NULL,
+  `latest_regi` int(20) DEFAULT NULL,
   `psa_nsoID` int(11) NOT NULL,
-  `psa_nso_status` varchar(255) NOT NULL,
+  `psa_nso_status` varchar(255) DEFAULT NULL,
   `good_moralID` int(11) NOT NULL,
-  `good_moral_status` varchar(255) NOT NULL,
+  `good_moral_status` varchar(255) DEFAULT NULL,
   `medical_certID` int(11) NOT NULL,
-  `medical_cert_status` varchar(255) NOT NULL,
+  `medical_cert_status` varchar(255) DEFAULT NULL,
   `picture_two_by_twoID` int(11) NOT NULL,
-  `twobytwo_status` varchar(255) NOT NULL,
+  `twobytwo_status` varchar(255) DEFAULT NULL,
   `nc_non_enrollmentID` int(11) NOT NULL,
   `coc_hs_shsID` int(11) NOT NULL,
   `ac_pept_alsID` int(11) NOT NULL,
-  `admission_status` varchar(50) NOT NULL,
+  `admission_status` varchar(50) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student_admission`
 --
 
-INSERT INTO `student_admission` (`stud_admissionID`, `studID`, `sar_pupcct_resultID`, `sar_pupcet_result_status`, `f137ID`, `f137_status`, `f138ID`, `g10_status`, `g11_status`, `g12_status`, `cert_dry_sealID`, `psa_nsoID`, `psa_nso_status`, `good_moralID`, `good_moral_status`, `medical_certID`, `medical_cert_status`, `picture_two_by_twoID`, `twobytwo_status`, `nc_non_enrollmentID`, `coc_hs_shsID`, `ac_pept_alsID`, `admission_status`, `created_at`) VALUES
-(36, '218', 1, 'approve', 2, 'reject', 3, 'approve', 'reject', 'approve', 0, 4, 'reject', 5, 'approve', 6, 'reject', 7, 'approve', 0, 0, 0, 'complete', '2023-02-07 14:41:35');
+INSERT INTO `student_admission` (`stud_admissionID`, `studID`, `sar_pupcct_resultID`, `sar_pupcet_result_status`, `f137ID`, `f137_status`, `f138ID`, `g10_status`, `g11_status`, `g12_status`, `cert_dry_sealID`, `cert_dry_sealID_twelve`, `app_grad`, `or_app_grad`, `latest_regi`, `psa_nsoID`, `psa_nso_status`, `good_moralID`, `good_moral_status`, `medical_certID`, `medical_cert_status`, `picture_two_by_twoID`, `twobytwo_status`, `nc_non_enrollmentID`, `coc_hs_shsID`, `ac_pept_alsID`, `admission_status`, `created_at`) VALUES
+(36, '218', 1, 'approve', 2, 'reject', 3, 'approve', 'reject', 'approve', 0, 12, 13, 14, 0, 4, 'reject', 5, 'approve', 6, 'reject', 7, 'approve', 0, 0, 0, 'complete', '2023-02-11 14:29:37'),
+(44, '221', 1, NULL, 2, NULL, 3, NULL, NULL, NULL, 11, 12, 13, 14, NULL, 4, NULL, 5, NULL, 6, NULL, 7, NULL, 0, 0, 0, 'complete', '2023-02-11 14:43:12'),
+(45, '222', 0, NULL, 0, NULL, 3, NULL, NULL, NULL, 0, 0, 13, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 0, 0, 'incomplete', '2023-02-11 14:53:06');
 
 -- --------------------------------------------------------
 
@@ -896,7 +914,7 @@ CREATE TABLE `student_admission_files` (
   `medical_cert_files` varchar(255) NOT NULL,
   `picture_two_by_two_files` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student_admission_files`
@@ -915,7 +933,7 @@ CREATE TABLE `submission_status` (
   `id` int(10) NOT NULL,
   `legend` varchar(256) NOT NULL,
   `submission_status` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `submission_status`
@@ -945,7 +963,7 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -1006,12 +1024,16 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `status`, `role_id`,
 (208, '2019-00422-TG-0', '$2y$10$Lb43/Uyrjwx17iUOoN5jCOejj8FWQkj4M3pH1M7nMbHA2fjs5ov9W', 'kyledula34@gmail.com', 'a', 4, NULL, NULL, '2022-11-19 23:58:15', '2022-11-19 23:58:15', NULL),
 (209, '2019-00623-TG-0', '$2y$10$1xyIRbrOo9V6O.zn7H4zveapYOsSTd1.f0o6IhT6MksiUQIeVS79q', 'kyledula35@gmail.com', 'a', 4, NULL, NULL, '2022-11-20 00:01:04', '2022-11-20 00:01:04', NULL),
 (210, '2018-00234-TG-0', '$2y$10$T7.6oCvCIpIX1es4G9Qtr.YsqYdwsbYcK.N/jVCQWaNfto7WlmikW', 'kyledula36@gmail.com', 'a', 4, NULL, NULL, '2022-11-20 00:10:42', '2022-11-20 00:10:42', NULL),
-(211, 'Liwayoffice', '$2y$10$.40Sb8Bvuhu5sgqf75p0eOJBbEMBCYlygnoJ5uNo6334tN2gqoasu', 'liwaymabangis@gmail.com', 'a', 5, 5, 'a18fd8a599cd05360d630ad2e60b2a63', '2022-11-20 00:16:34', '2022-11-20 00:16:34', NULL),
+(211, 'Liwayoffice', 'adminpassword', 'liwaymabangis@gmail.com', 'a', 2, 1, 'a18fd8a599cd05360d630ad2e60b2a63', '2022-11-20 00:16:34', '2023-02-11 21:05:00', NULL),
 (212, '2017-00439-TG-0', '$2y$10$xnk4qMi94KSR0hFsf.v4Tekzv14bEe5wzway7olTD15WAKh.ulGBq', 'kyledula37@gmail.com', 'a', 4, NULL, NULL, '2022-11-20 00:18:00', '2022-11-20 00:18:00', NULL),
 (213, '2017-00234-TG-0', '$2y$10$peVJYaAJJ4mQAFozVPPE9OHUndP64Jkv2SQnHXzuENJ0cx5MYhvaG', 'harvz.buena@gmail.com', 'a', 4, NULL, NULL, '2022-11-24 13:26:35', '2022-11-24 13:26:35', NULL),
 (214, 'hbuena', 'harvz123', 'harvz.buena@gmail.com', 'a', 2, 1, '83ad196a055bb4d87f9d073307d46ddf', '2022-12-13 12:01:37', '2022-12-13 13:00:32', '2022-12-13 13:00:32'),
 (215, 'hbuena1', '$2y$10$peVJYaAJJ4mQAFozVPPE9OHUndP64Jkv2SQnHXzuENJ0cx5MYhvaG', 'harvz.buena1@gmail.com', 'a', 8, 1, 'a15336249a17c76a85a66edf026ad1bc', '2022-12-13 13:23:30', '2022-12-13 13:23:30', NULL),
-(218, '2019-00425-TG-0', '$2y$10$peVJYaAJJ4mQAFozVPPE9OHUndP64Jkv2SQnHXzuENJ0cx5MYhvaG', 'nmpcdsmts@gmail.com', 'a', 4, NULL, NULL, '2022-12-15 15:08:12', '2022-12-15 15:08:12', NULL);
+(218, '2019-00425-TG-0', '$2y$10$peVJYaAJJ4mQAFozVPPE9OHUndP64Jkv2SQnHXzuENJ0cx5MYhvaG', 'nmpcdsmts@gmail.com', 'a', 4, NULL, NULL, '2022-12-15 15:08:12', '2022-12-15 15:08:12', NULL),
+(219, 'admincute', '$2y$10$KefgllqWJUw7nw6Hk/wmbeCFOE3pSavVdCKT5kJXyrTaLPFWuQILy', 'edmondelacruz110@gmail.com', 'a', 2, 1, '0f694b519220903a8bc0ee459678de20', '2023-02-11 21:06:59', '2023-02-11 21:06:59', NULL),
+(220, 'adminone', '$2y$10$RxAsDtPgHTasv3ipZkX1VOFDXE46WIQh5sJgOttt0YCWIRBzquAC6', 'adminone@gmail.com', 'a', 5, 5, '21f9188e66d4c94c09b7e096f8deda50', '2023-02-11 21:11:02', '2023-02-11 21:11:02', NULL),
+(221, 'dfsdfsdf', '$2y$10$7ya5ximfVPAWqaT/.tsBL.9c2IFu5ryxxKQaTLbazZYVWslbKs4se', 'sdfs@gmail.com', 'a', 4, NULL, NULL, '2023-02-11 22:32:13', '2023-02-11 22:32:13', NULL),
+(222, 'cute ako', '$2y$10$Aqlq8FUE.zJVdgNieHaNiO807H.vESqkS68K0R0RCl6YhRg5P0dKi', 'cuteako@gmail.com', 'a', 4, NULL, NULL, '2023-02-11 22:46:38', '2023-02-11 22:46:38', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1209,7 +1231,7 @@ ALTER TABLE `academic_status`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `checklists`
@@ -1287,7 +1309,7 @@ ALTER TABLE `permission_types`
 -- AUTO_INCREMENT for table `ref_for_remarks`
 --
 ALTER TABLE `ref_for_remarks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ref_for_retrieved`
@@ -1329,13 +1351,13 @@ ALTER TABLE `role_permissions`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `student_admission`
 --
 ALTER TABLE `student_admission`
-  MODIFY `stud_admissionID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `stud_admissionID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `student_admission_files`
@@ -1347,7 +1369,7 @@ ALTER TABLE `student_admission_files`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- Constraints for dumped tables
