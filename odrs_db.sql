@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2023 at 08:05 AM
+-- Generation Time: Feb 11, 2023 at 03:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -102,7 +102,9 @@ INSERT INTO `checklists` (`checklistID`, `checklistName`, `created_at`) VALUES
 (8, 'Notarized Cert of Non-enrollment', '2022-12-17 01:21:20'),
 (9, 'COC (HS/SHS)', '2022-12-17 01:21:20'),
 (10, 'Authenticated Copy PEPT/ALS', '2022-12-17 01:21:20'),
-(11, 'Certificate with dry seal', '2022-12-17 01:21:20');
+(11, 'Certificate with dry seal', '2022-12-17 01:21:20'),
+(12, 'Grade 11 Card', '2023-02-08 14:02:49'),
+(13, 'Grade 12 Card', '2023-02-08 14:02:49');
 
 -- --------------------------------------------------------
 
@@ -884,17 +886,24 @@ INSERT INTO `student_admission` (`stud_admissionID`, `studID`, `sar_pupcct_resul
 CREATE TABLE `student_admission_files` (
   `id` int(11) NOT NULL,
   `studID` int(11) NOT NULL,
-  `sar_pupcct_results_files` text NOT NULL,
-  `f137_files` text NOT NULL,
-  `g10_files` text NOT NULL,
-  `g11_files` text NOT NULL,
-  `g12_files` text NOT NULL,
-  `psa_nso_files` text NOT NULL,
-  `good_moral_files` text NOT NULL,
-  `medical_cert_files` text NOT NULL,
-  `picture_two_by_two_files` text NOT NULL,
+  `sar_pupcct_results_files` varchar(255) NOT NULL,
+  `f137_files` varchar(255) NOT NULL,
+  `g10_files` varchar(255) NOT NULL,
+  `g11_files` varchar(255) NOT NULL,
+  `g12_files` varchar(255) NOT NULL,
+  `psa_nso_files` varchar(255) NOT NULL,
+  `good_moral_files` varchar(255) NOT NULL,
+  `medical_cert_files` varchar(255) NOT NULL,
+  `picture_two_by_two_files` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student_admission_files`
+--
+
+INSERT INTO `student_admission_files` (`id`, `studID`, `sar_pupcct_results_files`, `f137_files`, `g10_files`, `g11_files`, `g12_files`, `psa_nso_files`, `good_moral_files`, `medical_cert_files`, `picture_two_by_two_files`, `created_at`) VALUES
+(12, 201, '328338241_943186097062972_3589379765183706646_n.jpg', '328338241_943186097062972_3589379765183706646_n.jpg', '328338241_943186097062972_3589379765183706646_n_1.jpg', '328338241_943186097062972_3589379765183706646_n.jpg', '328338241_943186097062972_3589379765183706646_n_1.jpg', '328338241_943186097062972_3589379765183706646_n.jpg', '328338241_943186097062972_3589379765183706646_n.jpg', '328338241_943186097062972_3589379765183706646_n_1.jpg', '328338241_943186097062972_3589379765183706646_n.jpg', '2023-02-09 15:46:03');
 
 -- --------------------------------------------------------
 
@@ -1206,7 +1215,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `checklists`
 --
 ALTER TABLE `checklists`
-  MODIFY `checklistID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `checklistID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -1332,7 +1341,7 @@ ALTER TABLE `student_admission`
 -- AUTO_INCREMENT for table `student_admission_files`
 --
 ALTER TABLE `student_admission_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
