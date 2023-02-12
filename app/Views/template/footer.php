@@ -33,6 +33,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/sl-1.3.1/datatables.min.js"></script>
     
   
+    <script src="/js/alerts.js" type="text/javascript"></script>
 
 
     
@@ -50,3 +51,5 @@
 
   </body>
 </html>
+
+<?= $this->include('template/notifications'); ?>

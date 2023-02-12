@@ -709,143 +709,64 @@ class AdmissionController extends BaseController
 	}
 	public function insertStudentAdmissionForwarded($id)
 	{
-		if (!empty($_POST['sar_pupcct_resultID'])) {
-			$sar_pupcct_resultID = $_POST['sar_pupcct_resultID'];
-		}else{
-			$sar_pupcct_resultID = 0;}	
-		if (!empty($_POST['f137ID'])) {
-			$f137ID = $_POST['f137ID'];
-		}else{
-			$f137ID = 0;
-		}
-		if (!empty($_POST['f138ID'])) {
-			$f138ID = $_POST['f138ID'];
-		}else{
-			$f138ID = 0;
-		}	
-		if (!empty($_POST['psa_nsoID'])) {
-			$psa_nsoID = $_POST['psa_nsoID'];
-		}else{$psa_nsoID = 0;
-		}
-		if (!empty($_POST['good_moralID'])) {
-			$good_moralID = $_POST['good_moralID'];
-		}else{
-			$good_moralID = 0;
-		}
-		if (!empty($_POST['medical_certID'])) {
-			$medical_certID = $_POST['medical_certID'];
-		}else{
-			$medical_certID = 0;
-		}
-		if (!empty($_POST['picture_two_by_twoID'])) {
-			$picture_two_by_twoID = $_POST['picture_two_by_twoID'];
-		}else{
-			$picture_two_by_twoID = 0;
-		}
-		if (!empty($_POST['nc_non_enrollmentID'])) {
-			$nc_non_enrollmentID = $_POST['nc_non_enrollmentID'];
-		}else{
-			$nc_non_enrollmentID = 0;
-		}
-		if (!empty($_POST['coc_hs_shsID'])) {
-			$coc_hs_shsID = $_POST['coc_hs_shsID'];
-		}else{
-			$coc_hs_shsID = 0;
-		}
-		if (!empty($_POST['ac_pept_alsID'])) {
-			$ac_pept_alsID = $_POST['ac_pept_alsID'];
-		}else{
-			$ac_pept_alsID = 0;
-		}
-		if (!empty($_POST['cert_dry_sealID'])) {
-			$cert_dry_sealID = $_POST['cert_dry_sealID'];
-		}else{
-			$cert_dry_sealID = 0;
-		}
-		if (!empty($_POST['cert_dry_sealID_twelve'])) {
-			$cert_dry_sealID_twelve = $_POST['cert_dry_sealID_twelve'];
-		}else{
-			$cert_dry_sealID_twelve = 0;
-		}
-			
-		if (!empty($_POST['app_grad'])) {
-			$app_grad = $_POST['app_grad'];
-		}else{
-			$app_grad = 0;
-		}
-		if (!empty($_POST['or_app_grad'])) {
-			$or_app_grad = $_POST['or_app_grad'];
-		}else{
-			$or_app_grad = 0;
-		}
-		if (!empty($_POST['latest_regi'])) {
-			$latest_regi = $_POST['latest_regi'];
-		}else{
-			$latest_regi = 0;
-		}
-		
-		if (!empty($_POST['admission_status'])) {
-			$admission_status = $_POST['admission_status'];}else{$admission_status = "";}
-
 		$insertstudentadmission = new StudentadmissionModel;
-
 		$is_result = $insertstudentadmission->__getSAMDetails($id);
 
 		if (!empty($is_result)) {	
 			$data = [
 				'studID'=> $id,	
-				'sar_pupcct_resultID'=> $sar_pupcct_resultID,
-				'f137ID'=> $f137ID,
-				'f138ID'=> $f138ID,
-				'psa_nsoID'=> $psa_nsoID,
-				'good_moralID'=> $good_moralID,
-				'medical_certID'=> $medical_certID,
-				'picture_two_by_twoID'=> $picture_two_by_twoID,
-				'nc_non_enrollmentID'=> $nc_non_enrollmentID,
-				'coc_hs_shsID'=> $coc_hs_shsID,
-				'ac_pept_alsID'=> $ac_pept_alsID,
-				'cert_dry_sealID'=> $cert_dry_sealID,
-				'cert_dry_sealID_twelve'=> $cert_dry_sealID_twelve,
-				'admission_status'=> $admission_status,
-				'app_grad'=> $app_grad,
-				'or_app_grad'=> $or_app_grad,
-				'latest_regi'=> $latest_regi
+				'sar_pupcct_resultID'=> (!empty($_POST['sar_pupcct_resultID']) ? $_POST['sar_pupcct_resultID'] : 0),
+				'f137ID'=> (!empty($_POST['f137ID']) ? $_POST['f137ID'] : 0),
+				'f138ID'=> (!empty($_POST['f138ID']) ? $_POST['f138ID'] : 0),
+				'psa_nsoID'=> (!empty($_POST['psa_nsoID']) ? $_POST['psa_nsoID'] : 0),
+				'good_moralID'=> (!empty($_POST['good_moralID']) ? $_POST['good_moralID'] : 0),
+				'medical_certID'=> (!empty($_POST['medical_certID']) ? $_POST['medical_certID'] : 0),
+				'picture_two_by_twoID'=> (!empty($_POST['picture_two_by_twoID']) ? $_POST['picture_two_by_twoID'] : 0),
+				'nc_non_enrollmentID'=> (!empty($_POST['nc_non_enrollmentID']) ? $_POST['nc_non_enrollmentID'] : 0),
+				'coc_hs_shsID'=> (!empty($_POST['coc_hs_shsID']) ? $_POST['coc_hs_shsID'] : 0),
+				'ac_pept_alsID'=> (!empty($_POST['ac_pept_alsID']) ? $_POST['ac_pept_alsID'] : 0),
+				'cert_dry_sealID'=> (!empty($_POST['cert_dry_sealID']) ? $_POST['cert_dry_sealID'] : 0),
+				'cert_dry_sealID_twelve'=> (!empty($_POST['cert_dry_sealID_twelve']) ? $_POST['cert_dry_sealID_twelve'] : 0),
+				'admission_status'=> (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""),
+				'app_grad'=> (!empty($_POST['app_grad']) ? $_POST['app_grad'] : 0),
+				'or_app_grad'=> (!empty($_POST['or_app_grad']) ? $_POST['or_app_grad'] : 0),
+				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0)
 			];
-			$res = $insertstudentadmission->updateAdmissionStudents($id, $data, $admission_status);
-		}else{
+			$res = $insertstudentadmission->updateAdmissionStudents($id, $data, (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""));
+		}else{	
 			$data = [
 				'studID'=> $id,	
-				'sar_pupcct_resultID'=> $sar_pupcct_resultID,
-				'f137ID'=> $f137ID,
-				'f138ID'=> $f138ID,
-				'psa_nsoID'=> $psa_nsoID,
-				'good_moralID'=> $good_moralID,
-				'medical_certID'=> $medical_certID,
-				'picture_two_by_twoID'=> $picture_two_by_twoID,
-				'nc_non_enrollmentID'=> $nc_non_enrollmentID,
-				'coc_hs_shsID'=> $coc_hs_shsID,
-				'ac_pept_alsID'=> $ac_pept_alsID,
-				'cert_dry_sealID'=> $cert_dry_sealID,
-				'cert_dry_sealID_twelve'=> $cert_dry_sealID_twelve,
-				'admission_status'=> $admission_status,
-				'app_grad'=> $app_grad,
-				'or_app_grad'=> $or_app_grad,
-				'latest_regi'=> $latest_regi
+				'sar_pupcct_resultID'=> (!empty($_POST['sar_pupcct_resultID']) ? $_POST['sar_pupcct_resultID'] : 0),
+				'f137ID'=> (!empty($_POST['f137ID']) ? $_POST['f137ID'] : 0),
+				'f138ID'=> (!empty($_POST['f138ID']) ? $_POST['f138ID'] : 0),
+				'psa_nsoID'=> (!empty($_POST['psa_nsoID']) ? $_POST['psa_nsoID'] : 0),
+				'good_moralID'=> (!empty($_POST['good_moralID']) ? $_POST['good_moralID'] : 0),
+				'medical_certID'=> (!empty($_POST['medical_certID']) ? $_POST['medical_certID'] : 0),
+				'picture_two_by_twoID'=> (!empty($_POST['picture_two_by_twoID']) ? $_POST['picture_two_by_twoID'] : 0),
+				'nc_non_enrollmentID'=> (!empty($_POST['nc_non_enrollmentID']) ? $_POST['nc_non_enrollmentID'] : 0),
+				'coc_hs_shsID'=> (!empty($_POST['coc_hs_shsID']) ? $_POST['coc_hs_shsID'] : 0),
+				'ac_pept_alsID'=> (!empty($_POST['ac_pept_alsID']) ? $_POST['ac_pept_alsID'] : 0),
+				'cert_dry_sealID'=> (!empty($_POST['cert_dry_sealID']) ? $_POST['cert_dry_sealID'] : 0),
+				'cert_dry_sealID_twelve'=> (!empty($_POST['cert_dry_sealID_twelve']) ? $_POST['cert_dry_sealID_twelve'] : 0),
+				'admission_status'=> (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""),
+				'app_grad'=> (!empty($_POST['app_grad']) ? $_POST['app_grad'] : 0),
+				'or_app_grad'=> (!empty($_POST['or_app_grad']) ? $_POST['or_app_grad'] : 0),
+				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0)
 			];
-			$res = $insertstudentadmission->insertAdmissionStudents($id, $data, $admission_status);
+			$res = $insertstudentadmission->insertAdmissionStudents($id, $data, (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""));
 		}
 
- 			if ($res) {
-				$this->session->setFlashData('success_message', 'Successfully Added Student');
-            	if ($res['admission_status'] == 'complete') {
-            		return redirect()->to(base_url('admission/complete'));
-            	}elseif ($res['admission_status'] == 'incomplete') {
-            		return redirect()->to(base_url('admission/notify/'.$res['userID']));
-            	}
-			}else{
-				$this->session->setFlashData('error_message', 'Error');
-            	return redirect()->to(base_url('admission'));
+		if ($res) {
+			$this->session->setFlashData('success', 'Successfully Added Student!');
+			if ($res['admission_status'] == 'complete') {
+				return redirect()->to(base_url('admission/complete'));
+			}elseif ($res['admission_status'] == 'incomplete') {
+				return redirect()->to(base_url('admission/notify/'.$res['userID']));
 			}
+		} else {
+			$this->session->setFlashData('error', 'Error encountered!');
+			return redirect()->to(base_url('admission'));
+		}
 	}
 	public function showNotifier($id){
 		

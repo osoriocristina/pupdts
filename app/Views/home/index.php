@@ -100,3 +100,5 @@
     </div>
   </div>
 <?= view('home/footer') ?>
+
+<?= $this->include('template/notifications'); ?>

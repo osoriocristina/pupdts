@@ -74,3 +74,5 @@
     </div>
   </main>
 <?= view('admin/template/footer') ?>
+
+<?= $this->include('template/notifications'); ?>

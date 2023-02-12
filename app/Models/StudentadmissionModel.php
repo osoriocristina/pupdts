@@ -19,7 +19,6 @@ class StudentadmissionModel extends Model
 
 	public function insertAdmissionStudents($userID = 0, $data, $admission_status = "")
 	{	
-		// die(print_r($data));
 		$this->insert($data);
 
 		$rdata = [

@@ -23,3 +23,6 @@
     <script src="/js/admin.js" charset="utf-8"></script>
   </body>
 </html>
+
+
+<?= $this->include('template/notifications'); ?>

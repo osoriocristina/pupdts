@@ -21,3 +21,6 @@
     <script src="/js/student.js" charset="utf-8"></script>
   </body>
 </html>
+
+
+<?= $this->include('template/notifications'); ?>
