@@ -1,3 +1,4 @@
+<div style="padding: 20px">
 <section class="container-fluid">
   <div class="d-sm-flex align-items-center justify-content-between mb-0 mt-5 ms-5">
     <nav style="--bs-breadcrumb-divider: '<'; font-weight: bold;" aria-label="breadcrumb">
@@ -166,3 +167,4 @@
     </div>
   </div>    
 </section>
+                                    </div>

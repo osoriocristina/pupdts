@@ -730,7 +730,16 @@ class AdmissionController extends BaseController
 				'admission_status'=> (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""),
 				'app_grad'=> (!empty($_POST['app_grad']) ? $_POST['app_grad'] : 0),
 				'or_app_grad'=> (!empty($_POST['or_app_grad']) ? $_POST['or_app_grad'] : 0),
-				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0)
+				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0),
+				'eval_res'=> (!empty($_POST['eval_res']) ? $_POST['eval_res'] : 0),
+				'course_curri'=> (!empty($_POST['course_curri']) ? $_POST['course_curri'] : 0),
+				'cert_candi'=> (!empty($_POST['cert_candi']) ? $_POST['cert_candi'] : 0),
+				'gen_clear'=> (!empty($_POST['gen_clear']) ? $_POST['gen_clear'] : 0),
+				'or_grad_fee'=> (!empty($_POST['or_grad_fee']) ? $_POST['or_grad_fee'] : 0),
+				'cert_confer'=> (!empty($_POST['cert_confer']) ? $_POST['cert_confer'] : 0),
+				'schoolid'=> (!empty($_POST['schoolid']) ? $_POST['schoolid'] : 0),
+				'honor_dis'=> (!empty($_POST['honor_dis']) ? $_POST['honor_dis'] : 0),
+				'trans_rec'=> (!empty($_POST['trans_rec']) ? $_POST['trans_rec'] : 0)
 			];
 			$res = $insertstudentadmission->updateAdmissionStudents($id, $data, (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""));
 		}else{	
@@ -751,7 +760,15 @@ class AdmissionController extends BaseController
 				'admission_status'=> (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""),
 				'app_grad'=> (!empty($_POST['app_grad']) ? $_POST['app_grad'] : 0),
 				'or_app_grad'=> (!empty($_POST['or_app_grad']) ? $_POST['or_app_grad'] : 0),
-				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0)
+				'latest_regi'=> (!empty($_POST['latest_regi']) ? $_POST['latest_regi'] : 0),
+				'course_curri'=> (!empty($_POST['course_curri']) ? $_POST['course_curri'] : 0),
+				'cert_candi'=> (!empty($_POST['cert_candi']) ? $_POST['cert_candi'] : 0),
+				'gen_clear'=> (!empty($_POST['gen_clear']) ? $_POST['gen_clear'] : 0),
+				'or_grad_fee'=> (!empty($_POST['or_grad_fee']) ? $_POST['or_grad_fee'] : 0),
+				'cert_confer'=> (!empty($_POST['cert_confer']) ? $_POST['cert_confer'] : 0),
+				'schoolid'=> (!empty($_POST['schoolid']) ? $_POST['schoolid'] : 0),
+				'honor_dis'=> (!empty($_POST['honor_dis']) ? $_POST['honor_dis'] : 0),
+				'trans_rec'=> (!empty($_POST['trans_rec']) ? $_POST['trans_rec'] : 0)
 			];
 			$res = $insertstudentadmission->insertAdmissionStudents($id, $data, (!empty($_POST['admission_status']) ? $_POST['admission_status'] : ""));
 		}
@@ -799,13 +816,15 @@ class AdmissionController extends BaseController
 			$s_one_photocopy = $_POST['s_one_photocopy'];}else{$s_one_photocopy = NUll;}
 		if (!empty($_POST['submit_original'])) {
 			$submit_original = $_POST['submit_original'];}else{$submit_original = NUll;}
+		if (!empty($_POST['not_submit'])) {
+			$not_submit = $_POST['not_submit'];}else{$not_submit = NUll;}
 		if (!empty($_POST['remarks'])) {
 			$remarks = $_POST['remarks'];}else{$remarks = NUll;}
 
-		// var_dump($userID.', '.$email.', '.$admission_status.', '.$no_dry_seal.', '.$sc_true_copy.', '.$sc_pup_remarks.', '.$s_one_photocopy.', '.$submit_original.', '.$remarks);	
+		// var_dump($userID.', '.$email.', '.$admission_status.', '.$no_dry_seal.', '.$sc_true_copy.', '.$sc_pup_remarks.', '.$s_one_photocopy.', '.$submit_original.', '.$not_submit.', '.$remarks);	
 		if ($admission_status == 'incomplete') {			
 			$getrefmodel = new RefremarksModel;
-			$res = $getrefmodel->insertSendLackingDocuments($email, $userID, $no_dry_seal, $sc_true_copy, $sc_pup_remarks, $s_one_photocopy, $submit_original, $remarks);
+			$res = $getrefmodel->insertSendLackingDocuments($email, $userID, $no_dry_seal, $sc_true_copy, $sc_pup_remarks, $s_one_photocopy, $submit_original, $not_submit, $remarks);
 
 	 			if ($res) {
 					$this->session->setFlashData('success_message', 'Successfully Added Student');
