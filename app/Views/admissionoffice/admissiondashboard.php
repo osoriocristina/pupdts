@@ -159,7 +159,7 @@
                                 </div>
                               <?php endif ?>
                             <?php else: ?>
-                              <div class="badge bg-default text-wrap" style="width: 6rem;color:black;">
+                              <diwdv class="badge bg-default text-wrap" style="width: 6rem;color:black;">
                                 No Files
                               </div>
                             <?php endif ?>
@@ -283,7 +283,7 @@
                                     <textarea class="form-control" placeholder="Reason:" name="reasons" required></textarea>
                                   <br>
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary" name="btnretrieved">Save Changes</button>
+                                  <button type="submit" class="btn btn-primary" name="btnretrieved">Retrieve</button>
                                 </form>
                               </div>
                           </div>

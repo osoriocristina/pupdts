@@ -187,7 +187,7 @@ class AdmissionController extends BaseController
  
 		 // set document information
 		 $pdf->SetCreator(PDF_CREATOR);
-		 $pdf->SetAuthor('PUPT Taguig ACT-DRS');
+		 $pdf->SetAuthor('PUPT Taguig OCT-DRS');
 		 $pdf->SetTitle('Report');
 		 $pdf->SetSubject('Document Request Report');
 		 $pdf->SetKeywords('Report, ODRS, Document');
@@ -277,7 +277,7 @@ class AdmissionController extends BaseController
  
 		 // set document information
 		 $pdf->SetCreator(PDF_CREATOR);
-		 $pdf->SetAuthor('PUPT Taguig ACT-DRS');
+		 $pdf->SetAuthor('PUPT Taguig OCT-DRS');
 		 $pdf->SetTitle('Report');
 		 $pdf->SetSubject('Document Request Report');
 		 $pdf->SetKeywords('Report, ODRS, Document');
@@ -366,7 +366,7 @@ class AdmissionController extends BaseController
  
 		 // set document information
 		 $pdf->SetCreator(PDF_CREATOR);
-		 $pdf->SetAuthor('PUPT Taguig ACT-DRS');
+		 $pdf->SetAuthor('PUPT Taguig OCT-DRS');
 		 $pdf->SetTitle('Report');
 		 $pdf->SetSubject('Document Request Report');
 		 $pdf->SetKeywords('Report, ODRS, Document');
@@ -455,7 +455,7 @@ class AdmissionController extends BaseController
  
 		 // set document information
 		 $pdf->SetCreator(PDF_CREATOR);
-		 $pdf->SetAuthor('PUPT Taguig ACT-DRS');
+		 $pdf->SetAuthor('PUPT Taguig OCT-DRS');
 		 $pdf->SetTitle('Report');
 		 $pdf->SetSubject('Document Request Report');
 		 $pdf->SetKeywords('Report, ODRS, Document');
@@ -541,7 +541,7 @@ class AdmissionController extends BaseController
  
 		 // set document information
 		 $pdf->SetCreator(PDF_CREATOR);
-		 $pdf->SetAuthor('PUPT Taguig ACT-DRS');
+		 $pdf->SetAuthor('PUPT Taguig OCT-DRS');
 		 $pdf->SetTitle('Report');
 		 $pdf->SetSubject('Document Request Report');
 		 $pdf->SetKeywords('Report, ODRS, Document');
@@ -1025,8 +1025,10 @@ class AdmissionController extends BaseController
 	public function showstudentRetrievedFiles()
 	{
 		$getRetrievedRecord = new RefForRetrievedModel;
+		
 
 		$this->data['retrieved_record'] = $getRetrievedRecord->__getRetrievedRecord();
+		
 		// var_dump($this->data['retrieved_record']);
 		if ($this->isAjax()) {
 				return view('admissionoffice/components/retrievedstudentdocuments', $this->data);
